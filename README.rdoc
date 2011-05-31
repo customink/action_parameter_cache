@@ -1,0 +1,17 @@
+== ActionParameterCache
+
+This is an alternative to caches_action which allows you to cache actions that don't all go to unique url's but can be differentiated by the parameters that are passed in.
+
+=== Installation
+
+Add this to your Gemfile:
+
+gem 'action_parameter_cache', :git => "git://github.com/customink/action_parameter_cache.git"
+
+=== Usage
+
+You can use the method <tt>caches_action_with_parameters</tt> to specify which actions need to be cached:
+
+  FoobarController < ActionController::Base
+    caches_action_with_parameters :index, :parameters => %w{foo, bar, 86}
+  end
